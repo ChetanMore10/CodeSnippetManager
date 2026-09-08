@@ -10,5 +10,4 @@ public class CodeSnippetManagerApplication {
 		SpringApplication.run(CodeSnippetManagerApplication.class, args);
         System.err.println("Application run Successfully..!");
 	}
-
 }
