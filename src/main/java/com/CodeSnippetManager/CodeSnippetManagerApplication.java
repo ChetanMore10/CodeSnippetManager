@@ -8,6 +8,7 @@ public class CodeSnippetManagerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CodeSnippetManagerApplication.class, args);
+        System.err.println("Application run Successfully..!");
 	}
 
 }
