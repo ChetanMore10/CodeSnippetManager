@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Snippet Form</title>
+</head>
+<body>
+<h1>Code Snippet</h1>
+
+<form th:object="${snippet}"
+      th:action="${snippet.id == null} ? @{/snippets} : @{/snippets/{id}/update(id=${snippet.id})}"
+      method="post">
+
+    <label>Title</label>
+    <input type="text" th:field="*{title}" required>
+    <br><br>
+
+    <label>Language</label>
+    <input type="text" th:field="*{language}" required>
+    <br><br>
+
+    <label>Category</label>
+    <input type="text" th:field="*{category}">
+    <br><br>
+
+    <label>Difficulty</label>
+    <input type="text" th:field="*{difficulty}">
+    <br><br>
+
+    <label>Description</label>
+    <textarea th:field="*{description}"></textarea>
+    <br><br>
+
+    <label>Code</label>
+    <textarea th:field="*{code}" rows="10" cols="60"></textarea>
+    <br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+<a th:href="@{/snippets}">Back</a>
+</body>
+</html>

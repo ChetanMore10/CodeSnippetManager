@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Snippets</title>
+</head>
+<body>
+<h1>Code Snippets</h1>
+
+<a th:href="@{/snippets/new}">Add Snippet</a>
+
+<table border="1" cellpadding="8">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Language</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="snippet : ${snippets}">
+        <td th:text="${snippet.id}"></td>
+        <td th:text="${snippet.title}"></td>
+        <td th:text="${snippet.language}"></td>
+        <td>
+            <a th:href="@{/snippets/{id}(id=${snippet.id})}">View</a>
+            <a th:href="@{/snippets/{id}/edit(id=${snippet.id})}">Edit</a>
+
+            <form th:action="@{/snippets/{id}/delete(id=${snippet.id})}"
+                  method="post" style="display:inline">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

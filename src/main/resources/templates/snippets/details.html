@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Snippet Details</title>
+</head>
+<body>
+<h1 th:text="${snippet.title}">Snippet Title</h1>
+
+<p>Language: <span th:text="${snippet.language}"></span></p>
+<p>Category: <span th:text="${snippet.category}"></span></p>
+<p>Difficulty: <span th:text="${snippet.difficulty}"></span></p>
+<p>Description: <span th:text="${snippet.description}"></span></p>
+
+<h3>Code</h3>
+<pre th:text="${snippet.code}"></pre>
+
+<a th:href="@{/snippets}">Back to list</a>
+</body>
+</html>
